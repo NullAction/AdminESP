@@ -93,3 +93,14 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_SERVER_LIST}
 
+---
+#Modified for Guiwang
+spring:
+  profiles: s-gateway
+  redis:
+      host: 10.122.20.240
+      password: '{cipher}2c5ea04f81089b68bb8479d69f2bfd5ddac9bb9f976d0ce25886640e081a8c2b'
+  rabbitmq:
+      host: 10.122.20.240
+
+

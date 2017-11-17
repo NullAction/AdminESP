@@ -2,15 +2,24 @@ spring:
   cloud:
     config:
       server:
+#        git:
+#          uri: http://localhost/billjiang/spring-cloud-config.git
+#          search-paths: config
+#          username: billjiang
+#          password: '{cipher}18a53c2c7157f17aa3d5a72dc77b4c31a023570c61186605efa3928ea4b343fd'
+
+#Modified for Guiwang
         git:
-          uri: http://localhost/billjiang/spring-cloud-config.git
+          uri: http://10.27.213.70/Guiwang/sc-config-guiwang.git
+#          uri: http://10.27.213.70/root/spring-cloud-config.git
           search-paths: config
-          username: billjiang
-          password: '{cipher}18a53c2c7157f17aa3d5a72dc77b4c31a023570c61186605efa3928ea4b343fd'
+          username: '{cipher}f97c33bcb6dcfc0e16cc1a243056762c93ca28e4ca25d13443a5292267f38daf'
+          password: '{cipher}9d0efbda4a390e2b446da1f16cef7fe38b0515b96dbcd3ad65d133bded68edde'
+          clone-on-start: true
 
 security:
   basic:
-    enabled: true
+    enabled: false
   user:
     name: user
     password: 123456
@@ -49,6 +58,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_SERVER_LIST}
-
-
-

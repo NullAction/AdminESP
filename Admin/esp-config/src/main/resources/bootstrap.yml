@@ -2,13 +2,18 @@ spring:
   application:
     name: esp-config
   rabbitmq:
-    host: localhost
+#Modified for Guiwang
+#    host: localhost
+    host: 10.122.20.240
     port: 5672
     username: guest
     password: guest
 
+#encrypt.key 在bootstrap中，參考以下連接
 #https://github.com/spring-cloud/spring-cloud-config/issues/767
 encrypt:
-  key: billjiang
+#Modified for Guiwang
+#  key: billjiang
+  key: killer
 
 

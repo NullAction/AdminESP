@@ -101,3 +101,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_SERVER_LIST}
+
+---
+spring:
+  profiles: s-admin
+  datasource:
+    url: jdbc:mysql://10.27.213.67:3306/esp-admin?useUnicode=true&characterEncoding=UTF8
+    username: root
+    password: mysql
