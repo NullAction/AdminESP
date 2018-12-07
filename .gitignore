@@ -1,8 +1,7 @@
-*target/
-*.iml
+*.swp
 .idea/
-*.class
-.project
-.settings/
-.classpath
+*.iml
 .mvn/
+*target/
+node_modules/
+package-lock.json

@@ -1,33 +1,6 @@
 # AdminESP- 企业服务治理平台
 
-## 启动顺序
+__正在重新整合...__
 
- register->track（可不启动）->config->ucenter(admin)->gateway
-
-
-## 依赖
-
-- gitlab
-
-> esp-config 中配置git地址和密码
-
-- rabbitmq
-
-> esp-gateway 中配置rabbitmq连接地址
-
-- mysql
-
-> esp-ucenter 中配置mysql连接
-
-- redis
-
-> esp-gateway 中配置redis连接
-
-
-
-
-
-
-
-
-
+# Introduction简介
+**AdminESP**是基于Spring-boot 2.0.1 + Mybatis + Vue.js的企业服务框架，使用该框架可快速实现企业服务应用。

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-default/index.css'
+import 'element-ui/lib/theme-chalk/index.css'
+import '@/styles/index.scss' // global css
 import App from './App'
 import router from './router'
 import store from './store'
@@ -9,15 +10,16 @@ import './icons' // icon
 import './errorLog'// error log
 import './permission' // 权限
 import './mock'  // 该项目所有请求使用mockjs模拟
+import Croppa from 'vue-croppa'
 
 Vue.use(ElementUI)
-
+Vue.use(Croppa)
 // register global utility filters.
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
-})
+});
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   el: '#app',

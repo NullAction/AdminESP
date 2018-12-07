@@ -47,29 +47,26 @@ const user = {
   actions: {
     // 用户名登录
     LoginByUsername({ commit }, userInfo) {
-      const username = userInfo.username.trim()
+      const username = userInfo.username.trim();
       return new Promise((resolve, reject) => {
         loginByUsername(username, userInfo.password).then(response => {
-          const data = response
-          setToken(data.token)
-          commit('SET_TOKEN', data.token)
-          resolve(data)
+          setToken(response.data);
+          commit('SET_TOKEN', response.data);
+          resolve(response);
         }).catch(error => {
-          reject(error)
+          reject(error);
         })
       })
     },
-
     // 获取用户信息
     GetUserInfo({ commit, state }) {
       return new Promise((resolve, reject) => {
         getUserInfo(state.token).then(response => {
-          const data = response
-          commit('SET_ROLES', data.roles)
-          commit('SET_NAME', data.name)
+          commit('SET_ROLES', response.data.roles)
+          commit('SET_NAME', response.data.name)
           commit('SET_AVATAR', 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif')
-          commit('SET_INTRODUCTION', data.description)
-          resolve(data)
+          commit('SET_INTRODUCTION', response.data.description)
+          resolve(response)
         }).catch(error => {
           reject(error)
         })
@@ -119,11 +116,10 @@ const user = {
         commit('SET_TOKEN', role)
         setToken(role)
         getUserInfo(role).then(response => {
-          const data = response.data
-          commit('SET_ROLES', data.role)
-          commit('SET_NAME', data.name)
-          commit('SET_AVATAR', data.avatar)
-          commit('SET_INTRODUCTION', data.introduction)
+          commit('SET_ROLES', response.data.role)
+          commit('SET_NAME', response.data.name)
+          commit('SET_AVATAR', response.data.avatar)
+          commit('SET_INTRODUCTION', response.data.introduction)
           resolve()
         })
       })
