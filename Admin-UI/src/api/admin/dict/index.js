@@ -1,4 +1,4 @@
-import fetch from 'utils/fetch'
+import fetch from 'utils/fetch';
 
 export function dictTree(query) {
   return fetch({
@@ -44,6 +44,13 @@ export function checkCode(id, code) {
     url: '/api/admin/dict/checkCode',
     method: 'get',
     params: id, code
+  })
+}
+
+export function getDictByCode(code) {
+  return fetch({
+    url: '/api/admin/dict/getDictByCode/' + code,
+    method: 'get'
   })
 }
 

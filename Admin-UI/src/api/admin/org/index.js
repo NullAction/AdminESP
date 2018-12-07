@@ -1,4 +1,4 @@
-import fetch from 'utils/fetch'
+import fetch from 'utils/fetch';
 
 export function orgTree(query) {
   return fetch({
@@ -55,3 +55,9 @@ export function delObj(id) {
   })
 }
 
+export function getAll() {
+  return fetch({
+    url: '/api/admin/org/all',
+    method: 'get'
+  })
+}
